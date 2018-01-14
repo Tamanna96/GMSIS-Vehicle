@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="401.0" prefWidth="363.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gmsis.vehicles.logic.WarrantyEditController">
+   <children>
+      <Label layoutX="16.0" layoutY="9.0" text="Edit Warranty">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Separator layoutX="10.0" layoutY="46.0" prefHeight="1.0" prefWidth="324.0" />
+      <Button fx:id="save" layoutX="14.0" layoutY="354.0" mnemonicParsing="false" onAction="#pressSave" text="SAVE" />
+      <Button fx:id="cancel" layoutX="66.0" layoutY="354.0" mnemonicParsing="false" onAction="#pressCancel" text="CANCEL" />
+      <Label fx:id="edErr" layoutX="16.0" layoutY="50.0" text="Please fill in all required fields" textFill="#ff1818" visible="false">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="warrantyDets" layoutX="16.0" layoutY="54.0">
+         <children>
+            <GridPane fx:id="wGrid" layoutY="24.0" prefHeight="270.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="188.0" minWidth="10.0" prefWidth="118.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="309.0" minWidth="10.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label prefHeight="17.0" prefWidth="137.0" text="Company Name" />
+                  <Label text="Address" GridPane.rowIndex="1" />
+                  <Label text="City" GridPane.rowIndex="3" />
+                  <Label text="Country" GridPane.rowIndex="4" />
+                  <Label text="Expiration Date" GridPane.rowIndex="6" />
+                  <Label text="Post Code" GridPane.rowIndex="5" />
+                  <TextField fx:id="cName" maxWidth="-Infinity" prefHeight="25.0" prefWidth="170.0" GridPane.columnIndex="1" />
+                  <TextField fx:id="add2" maxWidth="-Infinity" prefHeight="25.0" prefWidth="170.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="city" maxWidth="-Infinity" prefHeight="25.0" prefWidth="170.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="country" maxWidth="-Infinity" prefWidth="170.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="postcode" maxWidth="-Infinity" prefWidth="170.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <TextField fx:id="add1" maxWidth="-Infinity" prefHeight="25.0" prefWidth="170.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <DatePicker fx:id="expDate" prefHeight="25.0" prefWidth="170.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+               </children>
+            </GridPane>
+            <Label fx:id="warErr" layoutY="5.0" text="Please fill in all required fields" textFill="#f71919" visible="false">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label fx:id="nameErr" layoutX="11.0" layoutY="89.0" text="*" textFill="#ff1717" visible="false" />
+      <Label fx:id="addErr" layoutX="11.0" layoutY="124.0" text="*" textFill="#ff1717" visible="false" />
+      <Label fx:id="cityErr" layoutX="11.0" layoutY="192.0" text="*" textFill="#ff1717" visible="false" />
+      <Label fx:id="countryErr" layoutX="11.0" layoutY="227.0" text="*" textFill="#ff1717" visible="false" />
+      <Label fx:id="pcErr" layoutX="11.0" layoutY="260.0" text="*" textFill="#ff1717" visible="false" />
+      <Label fx:id="expErr" layoutX="11.0" layoutY="293.0" text="*" textFill="#ff1717" visible="false" />
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</AnchorPane>

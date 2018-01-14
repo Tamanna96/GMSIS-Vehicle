@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane prefHeight="644.0" prefWidth="1041.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gmsis.vehicles.logic.VehiclesController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="128.0" minHeight="0.0" prefHeight="59.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="62.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+       <AnchorPane prefHeight="39.0" prefWidth="610.0" GridPane.hgrow="ALWAYS" GridPane.vgrow="NEVER">
+           <children>
+               <Label layoutX="6.0" text="Vehicles">
+                   <font>
+                       <Font size="24.0" />
+                   </font>
+               </Label>
+               <Separator layoutY="36.0" prefHeight="0.0" prefWidth="610.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+           </children>
+           <GridPane.margin>
+               <Insets bottom="10.0" />
+           </GridPane.margin>
+       </AnchorPane>
+      <GridPane GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+        <columnConstraints>
+          <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="766.0" />
+          <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="245.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+        </rowConstraints>
+         <children>
+            <TableView fx:id="resultsTable" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+               <placeholder>
+                  <Label text="No such vehicle(s) exists" />
+               </placeholder>
+               <columns>
+                  <TableColumn fx:id="regColumn" prefWidth="130.0" text="Registration Number" />
+                  <TableColumn fx:id="firstNameColumn" prefWidth="79.0" text="Firstname" />
+                  <TableColumn fx:id="surnameColumn" prefWidth="77.0" text="Surname" />
+                  <TableColumn fx:id="addressColumn" prefWidth="117.0" text="Address" />
+                  <TableColumn fx:id="postcodeColumn" prefWidth="72.0" text="Postcode" />
+                  <TableColumn fx:id="phoneColumn" prefWidth="99.0" text="Phone Number" />
+                  <TableColumn fx:id="emailColumn" prefWidth="88.0" text="Email" />
+                  <TableColumn fx:id="nextBookedColumn" prefWidth="98.0" text="Next Booking " />
+               </columns>
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+               <children>
+                  <GridPane layoutX="23.0" layoutY="117.0" prefHeight="493.0" prefWidth="245.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <AnchorPane GridPane.hgrow="ALWAYS" GridPane.vgrow="SOMETIMES">
+                           <children>
+                              <GridPane layoutY="21.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="25.0" vgrow="NEVER" />
+                                  <RowConstraints minHeight="10.0" prefHeight="138.0" vgrow="ALWAYS" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text="Vehicle Details">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextArea fx:id="details_list" editable="false" promptText="Select a vehicle to view its details." GridPane.rowIndex="1" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="SOMETIMES">
+                           <children>
+                              <GridPane layoutX="62.0" layoutY="-80.0" prefHeight="164.0" prefWidth="307.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="25.0" vgrow="NEVER" />
+                                    <RowConstraints minHeight="10.0" prefHeight="138.0" vgrow="ALWAYS" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="Bookings">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <ListView fx:id="bookings_list" editable="false" GridPane.rowIndex="1">
+                                       <placeholder>
+                                          <Label text="No bookings found for this vehicle." textFill="#898282" />
+                                       </placeholder>
+                                    </ListView>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="SOMETIMES">
+                           <children>
+                              <GridPane layoutY="7.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="25.0" vgrow="NEVER" />
+                                    <RowConstraints minHeight="10.0" prefHeight="138.0" vgrow="ALWAYS" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="Parts Used">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <ListView fx:id="parts_list" editable="false" GridPane.rowIndex="1">
+                                       <placeholder>
+                                          <Label text="No parts used on this vehicle found." textFill="#898282" />
+                                       </placeholder>
+                                    </ListView>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </GridPane>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="NEVER">
+         <children>
+            <GridPane layoutY="18.0" prefHeight="65.0" prefWidth="1011.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints fillWidth="false" halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints />
+                  <RowConstraints />
+              </rowConstraints>
+               <children>
+                  <GridPane>
+                    <columnConstraints>
+                      <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="24.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <GridPane>
+                          <columnConstraints>
+                            <ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="SOMETIMES" maxWidth="326.0" minWidth="10.0" prefWidth="293.0" />
+                            <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="56.0" minWidth="10.0" prefWidth="56.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <TextField fx:id="searchBar" onKeyReleased="#pressSearch" prefHeight="25.0" prefWidth="290.0" promptText="ENTER REGISTRATION NUMBER/ MANUFACTURER" />
+                              <Button fx:id="search_btn" mnemonicParsing="false" onAction="#pressSearch" text="Search" GridPane.columnIndex="1" />
+                           </children>
+                        </GridPane>
+                        <GridPane prefHeight="24.0" prefWidth="185.0" GridPane.rowIndex="1">
+                          <columnConstraints>
+                              <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="10.0" prefWidth="50.0" />
+                              <ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="NEVER" minWidth="10.0" prefWidth="50.0" />
+                            <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="10.0" prefWidth="50.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                          </rowConstraints>
+                           <children>
+                              <CheckBox fx:id="carCheck" mnemonicParsing="false" onAction="#searchCar" text="Car" />
+                              <CheckBox fx:id="vanCheck" mnemonicParsing="false" onAction="#searchVan" text="Van" GridPane.columnIndex="1" />
+                              <CheckBox fx:id="truckCheck" mnemonicParsing="false" onAction="#searchTruck" text="Truck" GridPane.columnIndex="2" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </GridPane>
+                  <GridPane prefHeight="60.0" prefWidth="432.0" GridPane.columnIndex="1">
+                    <columnConstraints>
+                        <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Button fx:id="add" mnemonicParsing="false" onAction="#pressAdd" prefHeight="50.0" prefWidth="100.0" text="ADD" />
+                        <Button fx:id="edit" mnemonicParsing="false" onAction="#pressEdit" prefHeight="50.0" prefWidth="100.0" text="EDIT" GridPane.columnIndex="1" />
+                        <Button fx:id="delete" mnemonicParsing="false" onAction="#pressDelete" prefHeight="50.0" prefWidth="100.0" text="DELETE" GridPane.columnIndex="2" />
+                        <Button fx:id="editWarr" disable="true" mnemonicParsing="false" onAction="#editWarranty" prefHeight="50.0" prefWidth="110.0" text="EDIT WARRANTY" GridPane.columnIndex="3" />
+                     </children>
+                  </GridPane>
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+   </children>
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+   </padding>
+</GridPane>
